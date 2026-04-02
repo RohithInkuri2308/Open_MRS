@@ -78,6 +78,8 @@ public class AppointmentScheduling extends MRS_Base{
 		 File srcFile=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		 File destination=new File("C:\\Users\\realme\\Desktop\\Selenium_Practice\\OPEN_MRS\\Screenshots\\Passed\\ServiceTypes"+Utilities.timegenerator()+".png");
 		 FileUtils.copyFile(srcFile, destination);
+		 
+		 ao.clickOnClose();
 	}
 	@AfterTest
 	public void tearDown() {

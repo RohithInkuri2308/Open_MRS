@@ -3,6 +3,7 @@ package PageObjects;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -27,7 +28,10 @@ public class Appointments_Objects {
 	private WebElement alltypelinks;
 
 
-
+    @FindBy(xpath="//span[@ng-click='closeShowAllAppointmentsModal()']")
+    private WebElement closebutton;
+    
+    
 	public Appointments_Objects(WebDriver driver) {
 		this.driver=driver;
 		this.wait=new WebDriverWait(driver,Duration.ofSeconds(30));
@@ -50,6 +54,10 @@ public class Appointments_Objects {
 	public void alllinks() {
 		alltypelinks.click();
 	}
-	
+	public void clickOnClose() {
+		//wait.until(ExpectedConditions.elementToBeClickable(closebutton)).click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", closebutton);
+	}
 	
 }
