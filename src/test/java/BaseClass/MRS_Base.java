@@ -12,12 +12,11 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 
-
 public class MRS_Base {
 	protected WebDriver driver;
 	
 	
-	@Test(dataProvider = "LoginData")
+	@Test()
 	public WebDriver intializeBrowser(String Browser, String URL) {
 		if(Browser.equalsIgnoreCase("Chrome")) {
 			driver=new ChromeDriver(); 
